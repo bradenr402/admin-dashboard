@@ -1,0 +1,196 @@
+html {
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+}
+html,
+body {
+    height: 100%;
+    font-family: 'Roboto';
+}
+
+:root {
+    --blue: #1192d4;
+    --gray-bg: #e2e8f0;
+    --yellow: #f0b429;
+    --gray-text: #636363;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url(fonts/Roboto-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+.main-grid-container {
+    display: grid;
+    grid-template: 150px 1fr / 300px 1fr;
+    height: 100%;
+}
+
+.sidebar {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    background-color: #1992d4;
+    color: white;
+}
+
+.header {
+    grid-column: 2;
+    background-color: #fff;
+}
+
+.main-content {
+    grid-column: 2 / 3;
+    background-color: #e2e8f0;
+
+    display: grid;
+    grid-template: 1fr 1fr / 5fr 2fr;
+}
+
+.sidebar,
+.header,
+.main-content {
+    padding: 24px;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.projects {
+    grid-column: 1;
+    grid-row: 1 / 3;
+}
+
+.announcements {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.trending {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.trending > .container,
+.announcements > .container {
+    background: white;
+    border: none;
+    border-radius: 0.4em;
+    margin: 10px 0;
+    padding: 10px 0;
+
+    box-shadow: 2px 2px 6px #0000001a;
+}
+
+.trending > .container > div,
+.announcements > .container > div {
+    margin: 20px 20px;
+}
+
+.trending > .container > div:first-child,
+.announcements > .container > div:first-child {
+    margin-top: 10px;
+}
+
+.trending > .container > div:last-child,
+.announcements > .container > div:last-child {
+    margin-bottom: 10px;
+}
+
+.announcements > .container > div:not(:last-child) {
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--gray-bg);
+}
+
+.trending > .container h3,
+.announcements > .container h3 {
+    font-size: 0.75rem;
+}
+
+.trending > .container p,
+.announcements > .container p {
+    font-size: 0.6rem;
+    color: var(--gray-text);
+    padding-top: 4px;
+}
+
+.projects .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-columns: 1fr 1fr;
+    grid-template-rows: 200px;
+    grid-auto-rows: 200px;
+    gap: 20px;
+    margin: 10px 20px 0 0;
+}
+
+.projects .container > .card {background: white;
+    border: none;
+    border-left: 8px solid var(--yellow);
+    border-radius: 0.4em;
+    padding: 30px 20px;
+    box-shadow: 2px 2px 6px #0000001a;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.projects .container h3 {
+    font-size: 0.9rem;
+}
+
+.projects .container p {
+    font-size: 0.7rem;
+    color: var(--gray-text);
+}
+
+.sidebar h1,
+.sidebar .main-nav {
+    margin-bottom: 60px;
+}
+
+.sidebar li {
+    margin-bottom: 20px;
+}
+
+.sidebar li a {
+    font-weight: bold;
+}
+
+.sidebar li a::before {
+    content: '...';
+    padding-right: 20px;
+}
+
+.header input[type='search'] {
+    background: var(--gray-bg);
+    border: none;
+    border-radius: 1000px;
+    padding: 6px 12px;
+}
+
+.header .row1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type='search'] {
+    flex: 1;
+    margin: 0 6rem 12px 0;
+}
+
+.greeting p {
+    font-weight: bold;
+    font-size: 0.8rem;
+}
